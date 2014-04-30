@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A4"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.chsk.Quest2$PlaceholderFragment" >
+
+     <CheckBox
+         android:id="@+id/checkBox1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginTop="152dp"
+         android:text="Day   "
+         android:textSize="25sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:text="Night       "
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBox1"
+        android:layout_alignRight="@+id/checkBox2"
+        android:layout_below="@+id/checkBox1"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/rectangle"
+        android:onClick="goToCheck"
+        android:text="Continue" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBox2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="72dp"
+        android:text="What time are you looking for?"
+        android:textColor="#FFF"
+        android:textSize="20sp" />
+
+</RelativeLayout>
