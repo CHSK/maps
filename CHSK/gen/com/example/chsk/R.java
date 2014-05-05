@@ -1274,9 +1274,10 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f020072;
         public static final int ic_plusone_standard_off_client=0x7f020073;
         public static final int ic_plusone_tall_off_client=0x7f020074;
-        public static final int rectangle=0x7f020075;
-        public static final int rectangleblue2=0x7f020076;
-        public static final int rectangleyellow=0x7f020077;
+        public static final int logo=0x7f020075;
+        public static final int rectangle=0x7f020076;
+        public static final int rectangleblue2=0x7f020077;
+        public static final int rectangleyellow=0x7f020078;
     }
     public static final class id {
         public static final int CheckBox01=0x7f060045;
@@ -1307,9 +1308,8 @@ containing a value of this type.
         public static final int dialog=0x7f060012;
         public static final int disableHome=0x7f06000c;
         public static final int dropdown=0x7f060013;
-        public static final int editText1=0x7f06004a;
-        public static final int editText2=0x7f060048;
-        public static final int editText3=0x7f060047;
+        public static final int editText1=0x7f060049;
+        public static final int editText2=0x7f060047;
         public static final int edit_query=0x7f060033;
         public static final int end=0x7f060016;
         public static final int expand_activities_button=0x7f060029;
@@ -1320,7 +1320,8 @@ containing a value of this type.
         public static final int icon=0x7f06002d;
         public static final int ifRoom=0x7f06000e;
         public static final int image=0x7f06002a;
-        public static final int imageButton1=0x7f060049;
+        public static final int imageButton1=0x7f060048;
+        public static final int imageView1=0x7f06004a;
         public static final int listMode=0x7f060005;
         public static final int list_item=0x7f06002c;
         public static final int map=0x7f060040;
