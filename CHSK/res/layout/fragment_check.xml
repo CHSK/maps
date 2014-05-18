@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A4"
+    android:background="#FFF"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,62 +13,157 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox1"
+        android:layout_alignLeft="@+id/quick"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="22dp"
-        android:text="You have Selected"
-        android:textColor="#FFF"
+        android:layout_marginTop="32dp"
+        android:text="What would you like to do?"
+        android:textColor="#000"
         android:textSize="22sp" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
+        android:layout_alignLeft="@+id/quick"
+        android:layout_alignRight="@+id/quick"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="20dp"
-        android:checked="true"
-        android:text="Outdoors" />
+        android:layout_marginTop="27dp"
+         android:background="@drawable/blackboarder" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckIndoors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="36dp"
+                android:checked="false"
+                android:text="Indoors"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/CheckOutdoors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:checked="false"
+                android:text="Outdoors"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Active   "
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/CheckInactive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Inactive"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Day"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/CheckNight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Night"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/CheckFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free"
+                android:textSize="20sp" />
+        </TableRow>
+        
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckOther1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other..."
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/CheckOther2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other..."
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/button1"
-        android:layout_marginBottom="23dp"
+        android:layout_above="@+id/quick"
+        android:layout_alignLeft="@+id/quick"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/rectangle"
-        android:onClick="goToQ1"
-        android:text="New Search" />
+        android:minWidth="10000dip"
+        android:text="CheckLife With Area Code" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/quick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_marginBottom="28dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
         android:background="@drawable/rectangle"
         android:minWidth="10000dip"
         android:onClick="goToMap"
-        android:text="CheckLife With GPS!" />
-
-    <CheckBox
-        android:id="@+id/CheckBox01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox1"
-        android:layout_below="@+id/checkBox1"
-        android:checked="true"
-        android:text="Active" />
-
-    <CheckBox
-        android:id="@+id/CheckBox02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/CheckBox01"
-        android:layout_below="@+id/CheckBox01"
-        android:checked="true"
-        android:text="Daytime" />
+        android:text="CheckLife With GPS" />
 
 </RelativeLayout>

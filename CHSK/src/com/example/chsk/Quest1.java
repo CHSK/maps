@@ -38,7 +38,7 @@ public class Quest1 extends ActionBarActivity {
 	public void goToQ2(View view)
 	{
 		
-		Button b1 = (Button) findViewById(R.id.button1);
+		Button b1 = (Button) findViewById(R.id.quick);
 		
 		         b1.setBackground(getResources().getDrawable(R.drawable.rectangleyellow));
 		 

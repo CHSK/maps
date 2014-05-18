@@ -4,7 +4,9 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -43,12 +45,30 @@ public class Map extends FragmentActivity {
 	}
 	
 	private void setUpAllMap() {
+		Bundle cLocation = getIntent().getParcelableExtra("location");
+		LatLng currentLocation = cLocation.getParcelable("currentLocation");
 		CameraUpdate center=
-		        CameraUpdateFactory.newLatLng(new LatLng(34.05932,-117.819462));
-		    CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
-
-		    mMap.moveCamera(center);
-		    mMap.animateCamera(zoom);
+		        CameraUpdateFactory.newLatLng(currentLocation);
+		CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+		
+		mMap.addMarker(new MarkerOptions()
+				.position(currentLocation)
+				.title("Green")
+				.snippet("This is the green Marker")
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.greencheck)));
+		mMap.addMarker(new MarkerOptions()
+				.position(new LatLng((currentLocation.latitude - 0.005),currentLocation.longitude))
+				.title("Yellow")
+				.snippet("This is the yellow Marker")
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.yellowcheck)));
+		mMap.addMarker(new MarkerOptions()
+				.position(new LatLng((currentLocation.latitude + 0.005),currentLocation.longitude))
+				.title("Red")
+				.snippet("This is the red Marker")
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.redcheck)));
+		
+		mMap.moveCamera(center);
+		mMap.animateCamera(zoom);
 	}
 	
 	@Override
