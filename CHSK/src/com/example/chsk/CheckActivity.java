@@ -56,9 +56,9 @@ GooglePlayServicesClient.OnConnectionFailedListener {
 		//returns the btn to its normal color
 		getMenuInflater().inflate(R.menu.login, menu);
 		Button b1 = (Button) findViewById(R.id.quick);
-		Button b2 = (Button) findViewById(R.id.button2);
+		//Button b2 = (Button) findViewById(R.id.button2);
 		 b1.setBackground(getResources().getDrawable(R.drawable.rectangle));
-		 b2.setBackground(getResources().getDrawable(R.drawable.rectangle));
+		 //b2.setBackground(getResources().getDrawable(R.drawable.rectangle));
 		return true;
 	}
 //Go to map

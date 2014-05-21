@@ -120,10 +120,52 @@ public class Map extends FragmentActivity {
 		LatLng currentLocation = cLocation.getParcelable("currentLocation");
 		CameraUpdate center=
 		        CameraUpdateFactory.newLatLng(currentLocation);
-		CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+		CameraUpdate zoom=CameraUpdateFactory.zoomTo(10);
+		
+		String keywords = "";
+		boolean checks[] = getIntent().getBooleanArrayExtra("checks");
+		for(int i = 0; i < checks.length; i++){
+			if(checks[i]){
+				switch (i){
+					case 0:
+						keywords = keywords + "aquariam%7Cart_gallery%7Cbar%7Cbowling_alley%7Ccasino%7Cgym%7Clibrary%7Cmuseum%7Cnight_club%7Cshopping_mall%7Cmovie_theatre";
+						break;
+					case 1:
+						keywords = keywords + "amusement_park%7Ccampground%7Czoo%7Cstadium%7Cpark%7C";
+						break;
+					case 2:
+						keywords = keywords + "gym%7Cnight_club%7Camusement_park%7Ccampground%7Czoo%7Cpark%7Cbowling_alley%7C";
+						break;
+					case 3:
+						keywords = keywords + "aquarium%7Cart_gallery%7Cbar%7Ccasino%7Cspa%7Cbeauty_salon%7Clibrary%7Cmovie_theatre%7Cstadium%7Cshopping_mall%7C";
+						break;
+					case 4:
+						keywords = keywords + "park%7Czoo%7Camusement_park%7Cbar%7Ccasino%7Cgym%7Cmovie_theatre%7Cspa%7Cshopping_mall%7Cmuseum%7Ccampground%7C";
+						break;
+					case 5:
+						keywords = keywords + "bar%7Cart_gallery%7Ccampground%7Ccasino%7Cbowling_alley%7Cgym%7Cmovie_theatre%7Cnight_club%7C";
+						break;
+					case 6:
+						keywords = keywords + "restaurant%7C";
+						break;
+					case 7:
+						keywords = keywords + "";
+						break;
+				}
+			}
+		}
+		
+		if(keywords.length() == 0){
+			keywords = "amusemant_park%7Caquariam%7Cart_gallery%7Cbeauty_salon%7Cbowling_alley%7Ccampground%7Ccasino%7Cgym%7Clibrary%7Cmovie_theatre%7Cmuseum%7Cnight_club%7Cpark%7Crestaurant%7Cshopping_mall%7Cspa%7Cstadium%7Czoo%7C";
+		}
+		keywords = keywords.substring(0,keywords.length()-3);
+		System.out.println(keywords);
 		
 		System.out.println("hello");
-		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=34.054419,-117.818885&keyword=rock%20climbing&radius=32000&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
+		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
+												+ currentLocation.latitude + "," + currentLocation.longitude 
+												+ "&radius=32000&types="
+												+ keywords + "&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
 		
 		String title, address;
 		LatLng placeLocation;
@@ -161,21 +203,6 @@ public class Map extends FragmentActivity {
 					.icon(BitmapDescriptorFactory.fromResource(R.drawable.redcheck)));
 			}
 		}
-		mMap.addMarker(new MarkerOptions()
-				.position(currentLocation)
-				.title("Green")
-				.snippet("This is the green Marker")
-				.icon(BitmapDescriptorFactory.fromResource(R.drawable.greencheck)));
-		mMap.addMarker(new MarkerOptions()
-				.position(new LatLng((currentLocation.latitude - 0.005),currentLocation.longitude))
-				.title("Yellow")
-				.snippet("This is the yellow Marker")
-				.icon(BitmapDescriptorFactory.fromResource(R.drawable.yellowcheck)));
-		mMap.addMarker(new MarkerOptions()
-				.position(new LatLng((currentLocation.latitude + 0.005),currentLocation.longitude))
-				.title("Red")
-				.snippet("This is the red Marker")
-				.icon(BitmapDescriptorFactory.fromResource(R.drawable.redcheck)));
 		
 		mMap.moveCamera(center);
 		mMap.animateCamera(zoom);

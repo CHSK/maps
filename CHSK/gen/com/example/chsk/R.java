@@ -1305,12 +1305,11 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050027;
-        public static final int action_settings=0x7f05005a;
+        public static final int action_settings=0x7f050059;
         public static final int activity_chooser_view_content=0x7f050028;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
-        public static final int button2=0x7f050053;
-        public static final int checkBox2=0x7f050058;
+        public static final int checkBox2=0x7f050057;
         public static final int checkbox=0x7f050030;
         public static final int collapseActionView=0x7f05000d;
         public static final int container=0x7f05003f;
@@ -1318,8 +1317,8 @@ containing a value of this type.
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
-        public static final int editText1=0x7f050056;
-        public static final int editText2=0x7f050054;
+        public static final int editText1=0x7f050055;
+        public static final int editText2=0x7f050053;
         public static final int edit_query=0x7f050033;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050029;
@@ -1330,8 +1329,8 @@ containing a value of this type.
         public static final int icon=0x7f05002d;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f05002a;
-        public static final int imageButton1=0x7f050055;
-        public static final int imageView1=0x7f050057;
+        public static final int imageButton1=0x7f050054;
+        public static final int imageView1=0x7f050056;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f05002c;
         public static final int map=0x7f050040;
@@ -1344,7 +1343,7 @@ containing a value of this type.
         public static final int quick=0x7f050042;
         public static final int radio=0x7f050032;
         public static final int satellite=0x7f05001a;
-        public static final int scrollView1=0x7f050059;
+        public static final int scrollView1=0x7f050058;
         public static final int search_badge=0x7f050035;
         public static final int search_bar=0x7f050034;
         public static final int search_button=0x7f050036;
