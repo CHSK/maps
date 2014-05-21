@@ -162,10 +162,14 @@ public class Map extends FragmentActivity {
 		System.out.println(keywords);
 		
 		System.out.println("hello");
+<<<<<<< HEAD
 		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
 												+ currentLocation.latitude + "," + currentLocation.longitude 
 												+ "&radius=32000&types="
 												+ keywords + "&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
+=======
+		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation.latitude,currentLocation.longitude&keyword=rock%20climbing&radius=32000&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
+>>>>>>> FETCH_HEAD
 		
 		String title, address;
 		LatLng placeLocation;
