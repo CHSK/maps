@@ -123,7 +123,7 @@ public class Map extends FragmentActivity {
 		CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
 		
 		System.out.println("hello");
-		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=34.054419,-117.818885&keyword=rock%20climbing&radius=32000&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
+		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation.latitude,currentLocation.longitude&keyword=rock%20climbing&radius=32000&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
 		
 		String title, address;
 		LatLng placeLocation;
