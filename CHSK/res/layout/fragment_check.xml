@@ -2,157 +2,239 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="#DDD"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chsk.CheckActivity$PlaceholderFragment" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <ScrollView
+        android:layout_marginTop="60dp"
+        android:id="@+id/scrollView1"
+        android:layout_width="290dp"
+        android:layout_height="270dp" 
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/tableLayout1"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/quick"
+                android:layout_alignRight="@+id/quick"
+                android:layout_below="@+id/textView1"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/white" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckIndoors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="36dp"
+                        android:layout_weight="2"
+                        android:checked="false"
+                        android:text="Indoors "
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:src="@drawable/indoors" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckOutdoors"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="5"
+                        android:checked="false"
+                        android:text="Outdoors"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/outdoor" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckActive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:checked="false"
+                        android:text="Active"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/active2" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckInactive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:checked="false"
+                        android:text="Inactive"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/couch" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:checked="false"
+                        android:text="Day"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/day" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckNight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:checked="false"
+                        android:text="Night"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/night" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/CheckFood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Food"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/food" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/quick"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:text="What would you like to do?"
-        android:textColor="#000"
-        android:textSize="22sp" />
-
-    <TableLayout
-        android:id="@+id/tableLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/quick"
-        android:layout_alignRight="@+id/quick"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="27dp"
-         android:background="@drawable/blackboarder" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/CheckIndoors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="36dp"
-                android:checked="false"
-                android:text="Indoors"
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:id="@+id/CheckOutdoors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:checked="false"
-                android:text="Outdoors"
-                android:textSize="20sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/CheckActive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Active   "
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:id="@+id/CheckInactive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Inactive"
-                android:textSize="20sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/CheckDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Day"
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:id="@+id/CheckNight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="Night"
-                android:textSize="20sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/CheckFood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food"
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:id="@+id/CheckFree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Other..."
-                android:textSize="20sp" />
-        </TableRow>
-        
-
-        <TableRow
-            android:id="@+id/tableRow5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/CheckOther1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Other..."
-                android:textSize="20sp" />
-
-            <CheckBox
-                android:id="@+id/CheckOther2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Other..."
-                android:textSize="20sp" />
-        </TableRow>
-    </TableLayout>
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:minWidth="10000dip"
+        android:onClick="enterArea"
+        android:text="Area Code" />
 
     <Button
         android:id="@+id/quick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/area"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="26dp"
         android:background="@drawable/rectangle"
         android:minWidth="10000dip"
         android:onClick="goToMap"
         android:text="Local Search" />
+
+    <EditText
+        android:id="@+id/keywords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/quick"
+        android:layout_alignLeft="@+id/quick"
+        android:layout_alignRight="@+id/quick"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/white"
+        android:ems="10"
+        android:hint=" Input Keywords"
+        android:minHeight="35dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="What would you like to do?"
+        android:textColor="#000"
+        android:textSize="22sp" />
 
 </RelativeLayout>

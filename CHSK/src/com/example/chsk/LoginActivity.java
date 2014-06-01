@@ -33,27 +33,16 @@ public class LoginActivity extends ActionBarActivity {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.login, menu);
-		Button b1 = (Button) findViewById(R.id.quick);
-		 b1.setBackground(getResources().getDrawable(R.drawable.rectangle));
+		
 		return true;
 	}
-	@SuppressLint("NewApi")
-	public void goToQ1(View view)
-	{
-		Button b1 = (Button) findViewById(R.id.quick);
-		
-        b1.setBackground(getResources().getDrawable(R.drawable.rectangleyellow));
-		 Intent intent = new Intent(this, Quest1.class);
-		 startActivity(intent);
 
-	}
+
 	
 	@SuppressLint("NewApi")
 	public void goToCheck(View view)
 	{
-		Button b1 = (Button) findViewById(R.id.quick);
-		
-        b1.setBackground(getResources().getDrawable(R.drawable.rectangleyellow));
+	
 		 Intent intent = new Intent(this, CheckActivity.class);
 		
 		 startActivity(intent);

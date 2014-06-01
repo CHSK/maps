@@ -123,36 +123,59 @@ public class Map extends FragmentActivity {
 		CameraUpdate zoom=CameraUpdateFactory.zoomTo(10);
 		
 		String keywords = "";
+		String checkkey [];
+		String types [] = new String [] {"amusement_park","aquarium","art_gallery","beauty_salon","bar","bowling_alley","casino","campground","gym","library","movie_theatre","museum","night_club","park","restaurant","shopping_mall","stadium","spa","zoo"};
+		int typeSize = types.length;
 		boolean checks[] = getIntent().getBooleanArrayExtra("checks");
+		System.out.println(checks[0]);
 		for(int i = 0; i < checks.length; i++){
 			if(checks[i]){
 				switch (i){
 					case 0:
-						keywords = keywords + "aquariam%7Cart_gallery%7Cbar%7Cbowling_alley%7Ccasino%7Cgym%7Clibrary%7Cmuseum%7Cnight_club%7Cshopping_mall%7Cmovie_theatre";
+						checkkey = new String[] {"aquarium","art_gallery","bar","bowling_alley","casino","gym","library","museum","night_club","shopping_mall","movie_theatre"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "aquarium%7Cart_gallery%7Cbar%7Cbowling_alley%7Ccasino%7Cgym%7Clibrary%7Cmuseum%7Cnight_club%7Cshopping_mall%7Cmovie_theatre";
 						break;
 					case 1:
-						keywords = keywords + "amusement_park%7Ccampground%7Czoo%7Cstadium%7Cpark%7C";
+						checkkey = new String [] {"amusement_park","campground","zoo","stadium","park"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "amusement_park%7Ccampground%7Czoo%7Cstadium%7Cpark%7C";
 						break;
 					case 2:
-						keywords = keywords + "gym%7Cnight_club%7Camusement_park%7Ccampground%7Czoo%7Cpark%7Cbowling_alley%7C";
+						checkkey = new String [] {"gym","night_club","amusement_park","campground","zoo","park","bowling_alley"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "gym%7Cnight_club%7Camusement_park%7Ccampground%7Czoo%7Cpark%7Cbowling_alley%7C";
 						break;
 					case 3:
-						keywords = keywords + "aquarium%7Cart_gallery%7Cbar%7Ccasino%7Cspa%7Cbeauty_salon%7Clibrary%7Cmovie_theatre%7Cstadium%7Cshopping_mall%7C";
+						checkkey = new String [] {"aquarium","art_gallery","bar","casino","spa","beauty_salon","library","movie_theatre","stadium","shopping_mall"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "aquarium%7Cart_gallery%7Cbar%7Ccasino%7Cspa%7Cbeauty_salon%7Clibrary%7Cmovie_theatre%7Cstadium%7Cshopping_mall%7C";
 						break;
 					case 4:
-						keywords = keywords + "park%7Czoo%7Camusement_park%7Cbar%7Ccasino%7Cgym%7Cmovie_theatre%7Cspa%7Cshopping_mall%7Cmuseum%7Ccampground%7C";
+						checkkey = new String [] {"park","zoo","amusement_park","bar","casino","gym","movie_theatre","spa","shopping_mall","museum","campground"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "park%7Czoo%7Camusement_park%7Cbar%7Ccasino%7Cgym%7Cmovie_theatre%7Cspa%7Cshopping_mall%7Cmuseum%7Ccampground%7C";
 						break;
 					case 5:
-						keywords = keywords + "bar%7Cart_gallery%7Ccampground%7Ccasino%7Cbowling_alley%7Cgym%7Cmovie_theatre%7Cnight_club%7C";
+						checkkey = new String [] {"bar","art_gallery","campground","casino","bowling_alley","gym","movie_theatre","night_club"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "bar%7Cart_gallery%7Ccampground%7Ccasino%7Cbowling_alley%7Cgym%7Cmovie_theatre%7Cnight_club%7C";
 						break;
 					case 6:
-						keywords = keywords + "restaurant%7C";
+						checkkey = new String [] {"restaurant"};
+						typeSize = intersection(types,typeSize,checkkey);
+						//keywords = keywords + "restaurant%7C";
 						break;
 					case 7:
-						keywords = keywords + "";
 						break;
 				}
 			}
+		}
+		
+		for(int i = 0; i < typeSize; i++){
+			keywords = keywords + types[i];
+			keywords = keywords + "%7C";
+			System.out.println(keywords);
 		}
 		
 		if(keywords.length() == 0){
@@ -162,14 +185,11 @@ public class Map extends FragmentActivity {
 		System.out.println(keywords);
 		
 		System.out.println("hello");
-<<<<<<< HEAD
+
 		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
 												+ currentLocation.latitude + "," + currentLocation.longitude 
 												+ "&radius=32000&types="
 												+ keywords + "&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
-=======
-		JSONObject totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation.latitude,currentLocation.longitude&keyword=rock%20climbing&radius=32000&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
->>>>>>> FETCH_HEAD
 		
 		String title, address;
 		LatLng placeLocation;
@@ -210,6 +230,34 @@ public class Map extends FragmentActivity {
 		
 		mMap.moveCamera(center);
 		mMap.animateCamera(zoom);
+	}
+	
+	public int intersection(String[] a, int size, String[] b){
+		int tempSize = size;
+		boolean isThere = false;
+		for(int i = 0; i < tempSize; i++){
+			for(int j = 0; j < b.length; j++){
+				if(a[i].equals(b[j])){
+					isThere = true;
+					break;
+				}
+			}
+			if(!isThere){
+				if(i == tempSize - 1){
+					tempSize--;
+				}
+				else{
+					a[i] = a[i+1];
+					for(int n = i+1; n < tempSize - 1; n++){
+						a[n] = a[n+1];
+					}
+					tempSize--;
+					i--;
+				}
+			}	
+			isThere = false;
+		}
+		return tempSize;
 	}
 	
 	@Override
