@@ -65,6 +65,12 @@ GooglePlayServicesClient.OnConnectionFailedListener {
 
 	}
 
+	@SuppressLint("NewApi") public void onResume() {
+		super.onResume();
+		Button b1 = (Button) findViewById(R.id.quick);
+		b1.setBackground(getResources().getDrawable(R.drawable.rectangle));
+	}
+	
 	@SuppressLint("NewApi")
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

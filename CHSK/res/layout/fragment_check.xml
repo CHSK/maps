@@ -13,7 +13,7 @@
         android:layout_marginTop="60dp"
         android:id="@+id/scrollView1"
         android:layout_width="290dp"
-        android:layout_height="270dp" 
+        android:layout_height="200dp" 
         android:scrollbars="none">
 
         <LinearLayout
@@ -200,31 +200,30 @@
         android:onClick="enterArea"
         android:text="Area Code" />
 
-    <Button
-        android:id="@+id/quick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/area"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp"
-        android:background="@drawable/rectangle"
-        android:minWidth="10000dip"
-        android:onClick="goToMap"
-        android:text="Local Search" />
-
     <EditText
         android:id="@+id/keywords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/quick"
+        android:layout_below="@+id/scrollView1"
         android:layout_alignLeft="@+id/quick"
         android:layout_alignRight="@+id/quick"
         android:layout_marginBottom="14dp"
         android:background="@drawable/white"
         android:ems="10"
-        android:hint=" Input Keywords"
+        android:hint=" Refined Search"
         android:minHeight="35dp"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/quick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scrollView1"
+        android:layout_below="@+id/keywords"
+        android:background="@drawable/rectangle"
+        android:minWidth="10000dip"
+        android:onClick="goToMap"
+        android:text="Local Search" />
 
     <TextView
         android:id="@+id/textView1"
@@ -232,7 +231,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="21dp"
         android:text="What would you like to do?"
         android:textColor="#000"
         android:textSize="22sp" />

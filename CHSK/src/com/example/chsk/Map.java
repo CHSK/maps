@@ -137,7 +137,9 @@ public class Map extends FragmentActivity {
 						//String snippet = arg0.getSnippet();
 						//String website = snippet.substring(snippet.indexOf("%##") + 3);
 						String website = arg0.getTitle();
-						startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(website)));
+						if(!website.equals("")){
+							startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(website)));
+						}
 					}
 				});
 				
@@ -302,8 +304,8 @@ public class Map extends FragmentActivity {
 		else{
 			totalPlace = getJSONFromUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
 					+ currentLocation.latitude + "," + currentLocation.longitude 
-					+ "&radius=32000&types="
-					+ typewords + "&keyword=" + keywords
+					+ "&radius=32000"
+					+ "&keyword=" + keywords
 					+ "&sensor=false&key=AIzaSyBBGzY_3gkrw6sNUSEcDHRszYjz-Q99PPI");
 		}
 		
