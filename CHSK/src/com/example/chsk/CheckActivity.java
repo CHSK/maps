@@ -208,11 +208,9 @@ GooglePlayServicesClient.OnConnectionFailedListener {
 		 TextView tv = (TextView) findViewById(R.id.keywords);
 		 String s = tv.getText().toString();
 			
-
-			 intent.putExtra("keywords", s);
+		 intent.putExtra("keywords", s);
 		 
-		 
-			 intent.putExtra("areaCode", areaCode);
+		 intent.putExtra("areaCode", areaCode);
 		 
 		 intent.putExtra("checks", checks);
 		 
